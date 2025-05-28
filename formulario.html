@@ -16,7 +16,7 @@
     Nombre <input type="text" name="name" id="name">
     <br />
     Edad <input type="number" name="age" id="age">
-    <br />
+    <br />                                                    <!-- Usar muchos br -->
 
     Nacionalidad
     <select name="nationality" id="nationality">
@@ -26,15 +26,15 @@
       <option value="vnzl">Venezolana</option>
     </select>
     <br />
-    <input type="submit">
+    <button type="submit">Submit</button> <!-- No se si este mal pero se me hace raro que sea un input el submit -->
   </form>
 
-  <div>
+  <div id="lista-de-invitados"> <!-- No tenia el id -->
     <h2>Lista de invitados</h2>
 
   </div>
 
-  <script src="../formulario.js"></script>
+  <script src="./formulario.js"></script> <!-- La direccion esta mal -->
 </body>
 
 </html>

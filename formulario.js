@@ -1,8 +1,8 @@
-var formulario = document.querySelector("#form")
+var formulario = document.querySelector(".formulario") // El id del formulario no es form y esta mal seleccionado
 
-formulario.onsubmit = function(e) {
+formulario.addEventListener('submit', (e)=>{ // No estaba usando Event listener
 
-  e.prevent();
+  e.preventDefault();  // Le faltaba el default
   
   var n = formulario.elements[0]
   var e = formulario.elements[1]
@@ -28,14 +28,14 @@ if (nombre.length > 0
     && edad < 120) ) {
   agregarInvitado(nombre, edad, nacionalidad)
   }
-}
+})
 
-var botonBorrar = document.createElement("button")
+/* var botonBorrar = document.createElement("button")
 botonBorrar.textContent = "Eliminar invitado"
-botonBorrar.id = "boton-borrar"
+botonBorrar.id = "boton-borrar"                               // Habia 2 botones borrar, quitar este no afecta en nada parece
 var corteLinea = document.createElement("br")
 document.body.appendChild(corteLinea)
-document.body.appendChild(botonBorrar);
+document.body.appendChild(botonBorrar); */
 
 function agregarInvitado(nombre, edad, nacionalidad) {
 
@@ -52,10 +52,10 @@ function agregarInvitado(nombre, edad, nacionalidad) {
     nacionalidad = "Peruana"
   }
 
-var lista = document.getElementById("lista-de-invitados")
+var lista = document.getElementById("lista-de-invitados") // No existe el id de lista de invitados
 
 var elementoLista = document.createElement("div")
-elementoLista.classList.added("elemento-lista")
+elementoLista.classList.add("elemento-lista") // No existe added(), es add
 lista.appendChild(elementoLista)
 
 var spanNombre = document.createElement("span")
@@ -83,7 +83,7 @@ crearElemento("Edad", edad)
 crearElemento("Nacionalidad", nacionalidad)
 
 
-var botonBorrar = document.createElement("button")
+ var botonBorrar = document.createElement("button")
 botonBorrar.textContent = "Eliminar invitado"
 botonBorrar.id = "boton-borrar"
 var corteLinea = document.createElement("br")
@@ -93,5 +93,5 @@ elementoLista.appendChild(botonBorrar);
  botonBorrar.onclick = function() {
 // this.parentNode.style.display = 'none';
 botonBorrar.parentNode.remove()
-  }
+  } 
 }
